@@ -8,11 +8,11 @@ test('Searching item', async ({ page }) => {
 
     await page.screenshot({ path: 'screenshot.png', fullPage: true });
     await mainPage.openMainPage();
-    await page.screenshot({ path: 'screenshot.png', fullPage: true });
+    await page.screenshot({ path: 'screenshot2.png', fullPage: true });
     await mainPage.inputInSearchString(itemName);
-    await page.screenshot({ path: 'screenshot.png', fullPage: true });
+    await page.screenshot({ path: 'screenshot3.png', fullPage: true });
     await mainPage.clickSearchBtn();
-    await page.screenshot({ path: 'screenshot.png', fullPage: true });
+    await page.screenshot({ path: 'screenshot4.png', fullPage: true });
 
     await expect(
         page.locator(mainPage.serpListSelector)
