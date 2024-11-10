@@ -11,7 +11,7 @@ export class MainPage {
 
     public async openMainPage() {
         await this.page.goto('/');
-        const isContentSelectorDisplayed = await this.page.isVisible(this.popupSelector);
+        const isContentSelectorDisplayed = await this.page.isVisible(this.closePopupSelector);
         if(isContentSelectorDisplayed) await this.page.click(this.closePopupSelector);
     }
 
