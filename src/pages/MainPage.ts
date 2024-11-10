@@ -1,7 +1,8 @@
 import { Page } from '@playwright/test';
 
 export class MainPage {
-    private readonly contentSelector = '[data-auto="content"]'
+    private readonly popupSelector = '[data-auto="content"]'
+    private readonly closePopupSelector = '[data-auto="close-popup"]';
     private readonly searchInputSelector = '[data-auto="search-input"]';
     private readonly searchButtonSelector = '[data-auto="search-button"]';
     public readonly serpListSelector = '[data-auto="SerpList"]';
@@ -10,9 +11,8 @@ export class MainPage {
 
     public async openMainPage() {
         await this.page.goto('/');
-
-        const isContentSelectorDisplayed = await this.page.isVisible(this.contentSelector);
-        // if(isContentSelectorDisplayed) 
+        const isContentSelectorDisplayed = await this.page.isVisible(this.popupSelector);
+        if(isContentSelectorDisplayed) await this.page.click(this.closePopupSelector);
     }
 
     public async inputInSearchString(itemName: string) {
